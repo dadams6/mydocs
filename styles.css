@@ -1,0 +1,294 @@
+/* 
+Global Variables 
+*/
+
+:root {
+  --tw-text-opacity: 1;
+  --tw-bg-opacity: 1;
+  --text-grey: #333;
+  --brand: #0057ad;
+  --accent: #ccebff;
+  --accent-light: #fafdff;
+  --accent-border: #f0f6fa;
+  --accent-border-dark: #d7dde1;
+}
+
+/*
+Utility Classes
+*/
+
+.visually-hidden { /* https://webaim.org/techniques/css/invisiblecontent/ */
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+} 
+
+/*
+Global Layout & Styles
+*/
+
+body {
+  font-size: 16px;
+  line-height: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .025em;
+  color: var(--text-grey);
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body * {
+  box-sizing: inherit;
+}
+
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  color: rgba(0,87,173,var(--tw-text-opacity));
+  border-top: 2rem solid rgba(204,235,255,var(--tw-bg-opacity));
+  padding: .5rem 1rem;
+}
+
+footer {
+  padding: 2.5rem 1.5rem;
+  background-color: var(--accent-light);
+  border-top: 1px solid var(--accent-border);  
+}
+
+header div,
+footer div {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+main {
+  color: rgba(10,34,51,var(--tw-text-opacity));
+  padding: 2rem 1.5rem;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+/*
+Typography
+*/
+
+h1 {
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/*
+Components
+*/
+
+.logo {
+  width: 145px;
+  height: 38px;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  border-bottom: 1px solid var(--accent-border-dark);
+  padding: .5em 0;
+}
+
+td {
+  border-bottom: 1px solid var(--accent-border);
+  padding: .5rem 0;
+}
+
+.type {
+  width: 50px;
+}
+
+/* SVGs from FontAwesome - https://fontawesome.com/license */
+
+.type--folder {
+  background: url('assets/images/folder-plus-solid.svg') 50% 50% no-repeat;
+  background-size: 40%;
+}
+
+.type--folder:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
+.folderOpen {
+  background: url('assets/images/folder-minus-solid.svg') 50% .6rem no-repeat;
+  background-size: 40%;
+}
+
+.folderOpenRow {
+  background-color: var(--accent-light);
+}
+
+.type--doc {
+  background: url('assets/images/file-word-solid.svg') 50% 50% no-repeat;
+  background-size: 40%;
+}
+
+.type--pdf{
+  background: url('assets/images/file-pdf-solid.svg') 50% 50% no-repeat;
+  background-size: 40%;
+}
+
+.type--csv {
+  background: url('assets/images/file-csv-solid.svg') 50% 50% no-repeat;
+  background-size: 40%;
+}
+
+.type--mov {
+  background: url('assets/images/video-solid.svg') 50% 50% no-repeat;
+  background-size: 60%;
+}
+
+.name {
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+.name:hover {
+  cursor: pointer;
+  color: var(--brand);
+}
+
+.name:hover table {
+  color: var(--text-grey);
+}
+
+.added {
+  width: 90px;
+}
+
+table table {
+  display: flex;
+  flex-flow: column nowrap;
+  overflow: hidden;
+  max-height: 0;
+  transition: none;
+}
+
+table table.showFolderContents {
+  max-height: 100%;
+  margin-top: 1rem;
+  transition: all 300ms ease-in;
+}
+
+table table tr {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+table table td {
+  border-top: 1px solid var(--accent-border);
+  border-bottom: 0;
+  padding: .25rem 0;
+}
+
+table table .type {
+  flex-basis: 30px;
+  flex-shrink: 0;
+  background-size: 40%;
+}
+
+table table .name {
+  flex-basis: calc(100% - 30px);
+  flex-grow: 1;
+  padding-left: .25rem;
+  padding-right: .25rem;
+}
+
+table table .added {
+  flex-basis: 100%;
+  font-size: .8rem;
+  border-top: 0;
+  padding-top: 0;
+  padding-left: 34px;
+}
+
+/*
+Breakpoint Changes
+*/
+
+@media only screen and (min-width: 48rem) {
+
+  header {
+    padding: 1rem;
+  }
+
+  main {
+    max-width: 48rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  td {
+    padding: 1rem 0;
+  }
+
+  .name {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .folderOpen {
+    background-position: 50% 1.1rem;
+  }
+
+  table table td {
+    padding: .5rem 0
+  }
+
+  table table .name {
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+
+  table table .added {
+    padding-left: 38px;
+  }
+
+}
+
+@media only screen and (min-width: 62rem) {
+
+  main {
+    max-width: 62rem;
+  }
+
+}
+
+@media only screen and (min-width: 80rem) {
+
+  main {
+    max-width: 80rem;
+  }
+
+}
