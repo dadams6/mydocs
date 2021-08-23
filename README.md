@@ -1,8 +1,8 @@
 # README
 
-Uses Parcel to compile React code and serve on http://localhost:1234 - `npm start`
+Uses Parcel (https://parceljs.org/) to compile React code and serve on http://localhost:1234 - `npm start`
 
-Uses json-server to mimic a REST API using a json file served on http://localhost:3000/data - `json-server --watch src/data.json`
+Uses json-server (https://github.com/typicode/json-server) to mimic a REST API using a json file served on http://localhost:3000/data - `json-server --watch src/data.json`
 
 ## To Do:
 
